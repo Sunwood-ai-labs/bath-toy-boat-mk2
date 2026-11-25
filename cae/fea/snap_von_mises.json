@@ -1,0 +1,24 @@
+[
+ {
+  "command": "file.open",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cae/fea/boat_static.fieldcraft"
+  }
+ },
+ {
+  "command": "results.deformed",
+  "params": {
+   "step": "Static",
+   "show": true,
+   "scale": "auto"
+  }
+ },
+ {
+  "command": "results.contour",
+  "params": {
+   "step": "Static",
+   "field": "von_mises",
+   "bands": 12
+  }
+ }
+]

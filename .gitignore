@@ -1,0 +1,28 @@
+# Large CAE binaries, meshes, raw gcode, and videos
+*.fieldcraft
+*.fieldcraft.bak
+*.vtu
+*.gcode
+*.mp4
+*.sc.bak
+
+# Intermediate / duplicate CAD & slicer outputs
+cad/handoff/
+cad/out/*.stl
+cad/slicer/std_020_watertight/
+cad/slicer/draft_024_watertight/
+cad/slicer/ab_compare/
+cae/videos/
+cae/videos_vtk/
+
+# Python / Node / VitePress
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+docs/node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.DS_Store
+Thumbs.db

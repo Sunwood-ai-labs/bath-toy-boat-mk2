@@ -1,0 +1,22 @@
+[
+  {
+    "command": "inspect.measure"
+  },
+  {
+    "command": "inspect.interference"
+  },
+  {
+    "command": "inspect.clearance",
+    "params": {
+      "bodies": [
+        "Hull"
+      ],
+      "against": [
+        "Radar_Spinner",
+        "Hydro_Turbine"
+      ],
+      "clearance": 2.0,
+      "nearest": 2
+    }
+  }
+]

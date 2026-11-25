@@ -1,0 +1,107 @@
+[
+ {
+  "command": "model.units",
+  "params": {
+   "system": "mm-t-s-N-MPa"
+  }
+ },
+ {
+  "command": "geometry.import.mesh",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cad/handoff/hull.3mf"
+  }
+ },
+ {
+  "command": "model.material.create",
+  "params": {
+   "name": "Air20C",
+   "density": 1.225e-12,
+   "fluid": {
+    "type": "newtonian",
+    "viscosity": 1.81e-11
+   }
+  }
+ },
+ {
+  "command": "model.fluid_domain.create",
+  "params": {
+   "name": "WindTunnel",
+   "material": "Air20C",
+   "min": [
+    -140,
+    -75,
+    11
+   ],
+   "max": [
+    130,
+    75,
+    92
+   ],
+   "spacing": 3.0,
+   "obstacles": [
+    "Hull"
+   ],
+   "initial_velocity": [
+    -60.0,
+    0,
+    0
+   ],
+   "faces": {
+    "x_max": {
+     "type": "velocity",
+     "velocity": [
+      -60.0,
+      0,
+      0
+     ],
+     "profile": "uniform"
+    },
+    "x_min": {
+     "type": "pressure",
+     "pressure": 0,
+     "outflow": "convective"
+    },
+    "y_min": {
+     "type": "slip"
+    },
+    "y_max": {
+     "type": "slip"
+    },
+    "z_min": {
+     "type": "slip"
+    },
+    "z_max": {
+     "type": "slip"
+    }
+   }
+  }
+ },
+ {
+  "command": "model.step.create",
+  "params": {
+   "name": "WindTunnel",
+   "procedure": {
+    "type": "fluid",
+    "domain": "WindTunnel",
+    "collision": "hrr",
+    "end_time": 1.2,
+    "frames": 20
+   }
+  }
+ },
+ {
+  "command": "solve.fluid",
+  "params": {
+   "step": "WindTunnel",
+   "backend": "cpu",
+   "threads": 4
+  }
+ },
+ {
+  "command": "file.save_as",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cae/cfd/mk2_wind_tunnel.fieldcraft",
+   "results": true
+  }
+ }
+]

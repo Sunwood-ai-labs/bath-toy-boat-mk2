@@ -1,0 +1,71 @@
+{
+  "method": "3D 26-connected BFS flood-fill over 0.4 mm voxelized 3-body PIP STL",
+  "cad_total_volume_mm3": 190689.77,
+  "stl_total_volume_mm3": 190705.13,
+  "stl_vs_cad_rel_diff": 8.1e-05,
+  "center_of_mass_mm": [
+    -7.724,
+    0.0,
+    17.478
+  ],
+  "stern_spillway_threshold_z_mm": 16.5,
+  "observed_tub_downflooding_draft_mm": 18.5,
+  "max_displacement_before_tub_flood_mm3": 168058.4,
+  "max_displacement_at_spillway_Z16_5_mm3": 151977.0,
+  "cases": [
+    {
+      "material": "PLA_25pct_infill",
+      "density_g_cm3": 0.5,
+      "mass_g": 95.34,
+      "required_displacement_mm3": 95344.9,
+      "floats_without_tub_flooding": true,
+      "floats_if_completely_submerged": true,
+      "draft_mm": 11.04,
+      "downflood_margin_mm": 7.46,
+      "rim_freeboard_mm": 15.96,
+      "waterplane_area_mm2": 9881.2,
+      "KB_mm": 5.71,
+      "KG_mm": 17.48,
+      "BM_T_mm": 41.88,
+      "GM_T_mm": 30.12,
+      "GM_L_mm": 154.08,
+      "righting_moment_10deg_Nmm": 4.892
+    },
+    {
+      "material": "PLA_50pct_infill",
+      "density_g_cm3": 0.75,
+      "mass_g": 143.02,
+      "required_displacement_mm3": 143017.3,
+      "floats_without_tub_flooding": true,
+      "floats_if_completely_submerged": true,
+      "draft_mm": 15.46,
+      "downflood_margin_mm": 3.04,
+      "rim_freeboard_mm": 11.54,
+      "waterplane_area_mm2": 10373.8,
+      "KB_mm": 8.22,
+      "KG_mm": 17.48,
+      "BM_T_mm": 31.44,
+      "GM_T_mm": 22.18,
+      "GM_L_mm": 110.58,
+      "righting_moment_10deg_Nmm": 5.403
+    },
+    {
+      "material": "PP_solid",
+      "density_g_cm3": 0.9,
+      "mass_g": 171.62,
+      "required_displacement_mm3": 171620.8,
+      "floats_without_tub_flooding": false,
+      "floats_if_completely_submerged": true,
+      "draft_mm": null
+    },
+    {
+      "material": "PLA_100pct_solid",
+      "density_g_cm3": 1.24,
+      "mass_g": 236.46,
+      "required_displacement_mm3": 236455.3,
+      "floats_without_tub_flooding": false,
+      "floats_if_completely_submerged": false,
+      "draft_mm": null
+    }
+  ]
+}

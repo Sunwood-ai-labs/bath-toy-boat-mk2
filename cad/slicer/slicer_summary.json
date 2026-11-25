@@ -1,0 +1,24 @@
+[
+  {
+    "case_id": "draft_024_watertight",
+    "process": "0.24mm Draft @BBL A1M",
+    "layers": 250,
+    "filament_weight_g": 117.65,
+    "filament_length_m": 38.82,
+    "effective_density_g_cm3": 0.617,
+    "model_time": "3h 29m 29s",
+    "total_time": "3h 29m 48s",
+    "gcode_path": "C:\\Users\\makim\\.gemini\\antigravity\\scratch\\bath-toy-boat-mk2\\cad\\slicer\\draft_024_watertight\\plate_1.gcode"
+  },
+  {
+    "case_id": "std_020_watertight",
+    "process": "0.20mm Standard @BBL A1M",
+    "layers": 300,
+    "filament_weight_g": 122.06,
+    "filament_length_m": 40.27,
+    "effective_density_g_cm3": 0.64,
+    "model_time": "4h 27m 21s",
+    "total_time": "4h 27m 40s",
+    "gcode_path": "C:\\Users\\makim\\.gemini\\antigravity\\scratch\\bath-toy-boat-mk2\\cad\\slicer\\std_020_watertight\\plate_1.gcode"
+  }
+]

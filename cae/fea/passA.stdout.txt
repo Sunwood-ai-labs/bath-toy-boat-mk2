@@ -1,0 +1,32 @@
+{
+  "definitions": {
+    "boundary_conditions": 1,
+    "contacts": 0,
+    "couplings": 0,
+    "datums": 0,
+    "defeatures": 0,
+    "face_merges": 0,
+    "face_splits": 0,
+    "fluid_domains": 0,
+    "initial_fields": 0,
+    "loads": 0,
+    "masses": 0,
+    "materials": 1,
+    "partitions": 0,
+    "reference_points": 0,
+    "sections": 1,
+    "seeds": 0,
+    "sets": 2,
+    "size_controls": 0,
+    "springs": 0,
+    "steps": 1,
+    "stitches": 0,
+    "ties": 0
+  },
+  "display_units": "mm-t-s-N-MPa",
+  "elements": {
+    "tet4": 163569
+  },
+  "nodes": 41796,
+  "own_units": true
+}

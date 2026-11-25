@@ -1,0 +1,25 @@
+{
+  "initial_outer_water_z_mm": 11.5,
+  "settled_water_surface_z_mm": 9.47,
+  "gravity_mm_s2": -9810.0,
+  "gravity_m_s2": -9.81,
+  "grid_cells": [
+    104,
+    58,
+    22
+  ],
+  "steps": 1200,
+  "num_frames": 25,
+  "final_time_s": 0.059402,
+  "theoretical_dp_dz_Pa_per_m": 9810.0,
+  "measured_hydrostatic_dp_dz_Pa_per_m": 10131.6,
+  "final_gauge_buoyancy_Fz_N": 0.8009,
+  "mean_last5_frames_buoyancy_Fz_N": 0.8025,
+  "supported_mass_equivalent_g": 81.8,
+  "pla_25pct_weight_N": 0.8552,
+  "pla_50pct_weight_N": 1.2829,
+  "pla_100pct_weight_N": 2.1209,
+  "tub_interior_max_fill": 0.0,
+  "tub_interior_mean_fill": 0.0,
+  "stern_bay_max_fill": 0.0
+}

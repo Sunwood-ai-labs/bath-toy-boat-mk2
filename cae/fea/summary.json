@@ -1,0 +1,113 @@
+{
+  "element_type": "tet4 (linear)",
+  "elements": 163569,
+  "nodes": 41796,
+  "material": {
+    "name": "ABS_PETG",
+    "E_MPa": 2200.0,
+    "poisson": 0.35
+  },
+  "load_N": [
+    0.0,
+    0.0,
+    -20.0
+  ],
+  "max_displacement_mm": 0.00126,
+  "max_displacement_node": 29112,
+  "max_displacement_xyz_mm": [
+    19.989,
+    0.115,
+    40.5
+  ],
+  "max_von_mises_MPa": 0.2075,
+  "max_von_mises_node": 19619,
+  "max_von_mises_xyz_mm": [
+    31.249,
+    -7.014,
+    35.544
+  ],
+  "reactions_csv_rows": [
+    {
+      "set": "PIN_F",
+      "nodes": "1",
+      "fx [N]": "0",
+      "fy [N]": "-0.00000000000003781003288239049",
+      "fz [N]": "0.12249793818358073",
+      "mx [N·mm]": "2.796900558893254",
+      "my [N·mm]": "-4.384648809157265",
+      "mz [N·mm]": "-0.0000000000013533592329000657"
+    },
+    {
+      "set": "PIN_R",
+      "nodes": "1",
+      "fx [N]": "0.00000000000015734353923935185",
+      "fy [N]": "-0.00000000000012711099534046255",
+      "fz [N]": "-0.027147325944348818",
+      "mx [N·mm]": "-0.6380773889833136",
+      "my [N·mm]": "-0.9022142333445174",
+      "mz [N·mm]": "0.000000000000526165801699826"
+    },
+    {
+      "set": "SUP_KEEL",
+      "nodes": "471",
+      "fx [N]": "0.00000000000015734353923935185",
+      "fy [N]": "-0.00000000000016492102822285304",
+      "fz [N]": "20.000000000000036",
+      "mx [N·mm]": "5.028426327026663",
+      "my [N·mm]": "-264.962887020544",
+      "mz [N·mm]": "-0.0000000000008271934312002397"
+    },
+    {
+      "set": "total",
+      "nodes": "41796",
+      "fx [N]": "0.00000000000015734353923935185",
+      "fy [N]": "-0.00000000000016492102822285304",
+      "fz [N]": "20.000000000000036",
+      "mx [N·mm]": "5.028426327026663",
+      "my [N·mm]": "-264.962887020544",
+      "mz [N·mm]": "-0.0000000000008271934312002397"
+    },
+    {
+      "set": "applied",
+      "nodes": "",
+      "fx [N]": "0",
+      "fy [N]": "0",
+      "fz [N]": "-20.000000000000053",
+      "mx [N·mm]": "",
+      "my [N·mm]": "",
+      "mz [N·mm]": ""
+    }
+  ],
+  "stdout_summary": {
+    "definitions": {
+      "boundary_conditions": 3,
+      "contacts": 0,
+      "couplings": 0,
+      "datums": 0,
+      "defeatures": 0,
+      "face_merges": 0,
+      "face_splits": 0,
+      "fluid_domains": 0,
+      "initial_fields": 0,
+      "loads": 1,
+      "masses": 0,
+      "materials": 1,
+      "partitions": 0,
+      "reference_points": 0,
+      "sections": 1,
+      "seeds": 0,
+      "sets": 5,
+      "size_controls": 0,
+      "springs": 0,
+      "steps": 1,
+      "stitches": 0,
+      "ties": 0
+    },
+    "display_units": "mm-t-s-N-MPa",
+    "elements": {
+      "tet4": 163569
+    },
+    "nodes": 41796,
+    "own_units": true
+  }
+}

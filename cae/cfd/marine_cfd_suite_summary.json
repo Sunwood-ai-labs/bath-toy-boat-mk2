@@ -1,0 +1,35 @@
+{
+  "towing_tank": {
+    "speed_mm_s": 4.0,
+    "grid_cells": [
+      108,
+      60,
+      14
+    ],
+    "max_speed_mm_s": 11.364,
+    "drag_uN_mean_tail": -0.0,
+    "side_force_uN_mean_tail": 0.0
+  },
+  "wind_tunnel": {
+    "wind_speed_mm_s": 60.0,
+    "grid_cells": [
+      90,
+      50,
+      27
+    ],
+    "max_air_speed_mm_s": 92.73,
+    "aero_drag_uN_mean_tail": -0.0,
+    "aero_lift_uN_mean_tail": 0.0
+  },
+  "jet_turbine": {
+    "grid_cells": [
+      56,
+      32,
+      34
+    ],
+    "frames": 29,
+    "final_time_ms": 81.79,
+    "peak_jet_speed_in_turbine_bay_mm_s": 0.0,
+    "mean_turbine_bay_water_fill": 0.0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "bodies": [
+    {
+      "area_mm2": 59735.99539109061,
+      "bbox": {
+        "max": [
+          87.0,
+          43.8,
+          60.00000000000001
+        ],
+        "min": [
+          -76.5,
+          -43.8,
+          -2.3120394487818898e-14
+        ]
+      },
+      "center_of_mass": [
+        -7.616338036931172,
+        1.2092088879301682e-15,
+        16.9469747737614
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 598,
+      "face_types": {
+        "cone": 11,
+        "cylinder": 21,
+        "other": 78,
+        "plane": 107,
+        "sphere": 1
+      },
+      "faces": 218,
+      "kernel": {
+        "edges": 624,
+        "faces": 227,
+        "shells": 1,
+        "vertices": 399
+      },
+      "mass_g": 235.62816172516943,
+      "material": "Default",
+      "measured_by": "smlib",
+      "name": "Hull",
+      "notes": [],
+      "vertices": 382,
+      "volume_mm3": 182657.48970943366
+    }
+  ],
+  "body_count": 1,
+  "total": {
+    "area_mm2": 59735.99539109061,
+    "edges": 598,
+    "faces": 218,
+    "mass_g": 235.62816172516943,
+    "open_bodies_skipped": 0,
+    "vertices": 382,
+    "volume_mm3": 182657.48970943366
+  }
+}

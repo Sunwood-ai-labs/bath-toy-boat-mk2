@@ -1,0 +1,119 @@
+[
+ {
+  "command": "model.units",
+  "params": {
+   "system": "mm-t-s-N-MPa"
+  }
+ },
+ {
+  "command": "geometry.import.mesh",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cad/handoff/hull.3mf"
+  }
+ },
+ {
+  "command": "model.material.create",
+  "params": {
+   "name": "BathWater",
+   "density": 1e-09,
+   "fluid": {
+    "type": "newtonian",
+    "viscosity": 1e-06
+   }
+  }
+ },
+ {
+  "command": "model.fluid_domain.create",
+  "params": {
+   "name": "JetChannel",
+   "material": "BathWater",
+   "min": [
+    -84,
+    -24,
+    15
+   ],
+   "max": [
+    0,
+    24,
+    66
+   ],
+   "spacing": 1.5,
+   "obstacles": [
+    "Hull"
+   ],
+   "acceleration": [
+    0.0,
+    0.0,
+    -9810.0
+   ],
+   "free_surface": {
+    "liquid": [
+     {
+      "min": [
+       -26.5,
+       -8.5,
+       48.0
+      ],
+      "max": [
+       -9.5,
+       8.5,
+       65.0
+      ]
+     },
+     {
+      "min": [
+       -23.0,
+       -5.0,
+       17.0
+      ],
+      "max": [
+       -13.0,
+       5.0,
+       52.0
+      ]
+     },
+     {
+      "min": [
+       -34.0,
+       -5.0,
+       17.0
+      ],
+      "max": [
+       -18.0,
+       5.0,
+       26.5
+      ]
+     }
+    ]
+   }
+  }
+ },
+ {
+  "command": "model.step.create",
+  "params": {
+   "name": "JetFlow",
+   "procedure": {
+    "type": "fluid",
+    "domain": "JetChannel",
+    "collision": "hrr",
+    "steps": 3200,
+    "frames": 32
+   }
+  }
+ },
+ {
+  "command": "solve.fluid",
+  "params": {
+   "step": "JetFlow",
+   "backend": "cpu",
+   "threads": 4
+  }
+ },
+ {
+  "command": "file.save_as",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cae/cfd/mk2_jet_turbine.fieldcraft",
+   "results": true
+  }
+ }
+]

@@ -1,0 +1,3222 @@
+[
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "floor_t",
+   "expression": "3.5",
+   "comment": "軽量バスタブ底厚 mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "spinner_x",
+   "expression": "14.0",
+   "comment": "PIPレーダーターレット中心X mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "chimney_x",
+   "expression": "-18.0",
+   "comment": "メイン注水ファネル中心X mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wheel_x",
+   "expression": "-50.0",
+   "comment": "PIP 6枚羽根ハイドロタービン中心X mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wheel_floor_z",
+   "expression": "17.0",
+   "comment": "高床タービンベイ・スピルウェイ浸水限界高さZ mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "jet_z",
+   "expression": "21.5",
+   "comment": "ジェットノズル中心Z mm（上端26.0mmでZ=27mm天板と1.0mm肉厚確保）"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     0.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullOuter_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     71.0,
+     5.5
+    ],
+    [
+     42.0,
+     27.5
+    ],
+    [
+     2.0,
+     33.0
+    ],
+    [
+     -64.0,
+     30.0
+    ],
+    [
+     -72.0,
+     26.0
+    ],
+    [
+     -72.0,
+     -26.0
+    ],
+    [
+     -64.0,
+     -30.0
+    ],
+    [
+     2.0,
+     -33.0
+    ],
+    [
+     42.0,
+     -27.5
+    ],
+    [
+     71.0,
+     -5.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     12.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullOuter_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     78.0,
+     6.5
+    ],
+    [
+     46.0,
+     33.5
+    ],
+    [
+     2.0,
+     39.0
+    ],
+    [
+     -67.0,
+     35.5
+    ],
+    [
+     -75.0,
+     31.5
+    ],
+    [
+     -75.0,
+     -31.5
+    ],
+    [
+     -67.0,
+     -35.5
+    ],
+    [
+     2.0,
+     -39.0
+    ],
+    [
+     46.0,
+     -33.5
+    ],
+    [
+     78.0,
+     -6.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     27.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullOuter_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     84.0,
+     7.5
+    ],
+    [
+     49.0,
+     36.5
+    ],
+    [
+     2.0,
+     42.0
+    ],
+    [
+     -68.0,
+     38.0
+    ],
+    [
+     -76.0,
+     34.0
+    ],
+    [
+     -76.0,
+     -34.0
+    ],
+    [
+     -68.0,
+     -38.0
+    ],
+    [
+     2.0,
+     -42.0
+    ],
+    [
+     49.0,
+     -36.5
+    ],
+    [
+     84.0,
+     -7.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "HullOuter_sk_0"
+    },
+    {
+     "sketch": "HullOuter_sk_1"
+    }
+   ],
+   "body_name": "Hull"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "HullOuter_sk_1"
+    },
+    {
+     "sketch": "HullOuter_sk_2"
+    }
+   ],
+   "body_name": "Hull_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Hull_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     21.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SideBumper_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     81.5,
+     7.2
+    ],
+    [
+     47.8,
+     35.5
+    ],
+    [
+     2.0,
+     41.0
+    ],
+    [
+     -67.6,
+     37.2
+    ],
+    [
+     -75.6,
+     33.2
+    ],
+    [
+     -75.6,
+     -33.2
+    ],
+    [
+     -67.6,
+     -37.2
+    ],
+    [
+     2.0,
+     -41.0
+    ],
+    [
+     47.8,
+     -35.5
+    ],
+    [
+     81.5,
+     -7.2
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     24.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SideBumper_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     85.0,
+     7.8
+    ],
+    [
+     50.0,
+     38.0
+    ],
+    [
+     2.0,
+     43.8
+    ],
+    [
+     -68.5,
+     39.6
+    ],
+    [
+     -76.5,
+     35.6
+    ],
+    [
+     -76.5,
+     -35.6
+    ],
+    [
+     -68.5,
+     -39.6
+    ],
+    [
+     2.0,
+     -43.8
+    ],
+    [
+     50.0,
+     -38.0
+    ],
+    [
+     85.0,
+     -7.8
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     27.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SideBumper_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     84.0,
+     7.5
+    ],
+    [
+     49.0,
+     36.5
+    ],
+    [
+     2.0,
+     42.0
+    ],
+    [
+     -68.0,
+     38.0
+    ],
+    [
+     -76.0,
+     34.0
+    ],
+    [
+     -76.0,
+     -34.0
+    ],
+    [
+     -68.0,
+     -38.0
+    ],
+    [
+     2.0,
+     -42.0
+    ],
+    [
+     49.0,
+     -36.5
+    ],
+    [
+     84.0,
+     -7.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SideBumper_sk_0"
+    },
+    {
+     "sketch": "SideBumper_sk_1"
+    }
+   ],
+   "body_name": "Side_Bumper"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SideBumper_sk_1"
+    },
+    {
+     "sketch": "SideBumper_sk_2"
+    }
+   ],
+   "body_name": "Side_Bumper_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Side_Bumper",
+   "tools": [
+    "Side_Bumper_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     26.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "BowBulwark_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     84.0,
+     7.5
+    ],
+    [
+     49.0,
+     36.5
+    ],
+    [
+     2.0,
+     42.0
+    ],
+    [
+     -68.0,
+     38.0
+    ],
+    [
+     -76.0,
+     34.0
+    ],
+    [
+     -76.0,
+     -34.0
+    ],
+    [
+     -68.0,
+     -38.0
+    ],
+    [
+     2.0,
+     -42.0
+    ],
+    [
+     49.0,
+     -36.5
+    ],
+    [
+     84.0,
+     -7.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     34.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "BowBulwark_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     87.0,
+     8.0
+    ],
+    [
+     50.5,
+     37.5
+    ],
+    [
+     2.0,
+     42.5
+    ],
+    [
+     -68.0,
+     38.0
+    ],
+    [
+     -76.0,
+     34.0
+    ],
+    [
+     -76.0,
+     -34.0
+    ],
+    [
+     -68.0,
+     -38.0
+    ],
+    [
+     2.0,
+     -42.5
+    ],
+    [
+     50.5,
+     -37.5
+    ],
+    [
+     87.0,
+     -8.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "BowBulwark_sk_0"
+    },
+    {
+     "sketch": "BowBulwark_sk_1"
+    }
+   ],
+   "body_name": "Bow_Bulwark"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "140",
+   "width": "100",
+   "height": "22",
+   "center": [
+    "-46",
+    "0",
+    "36.5"
+   ],
+   "body_name": "Bulwark_AftCut"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "40",
+   "width": "100",
+   "height": "20",
+   "center": [
+    "30",
+    "0",
+    "40"
+   ],
+   "body_name": "Bulwark_RampCut"
+  }
+ },
+ {
+  "command": "solid.move",
+  "params": {
+   "bodies": [
+    "Bulwark_RampCut"
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ],
+   "angle": "-24 deg",
+   "origin": [
+    "24",
+    "0",
+    "27"
+   ]
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Bow_Bulwark",
+   "tools": [
+    "Bulwark_AftCut",
+    "Bulwark_RampCut"
+   ],
+   "operation": "cut"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Side_Bumper",
+    "Bow_Bulwark"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     3.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "TubCut_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     65.5,
+     3.8
+    ],
+    [
+     39.5,
+     24.5
+    ],
+    [
+     2.0,
+     29.8
+    ],
+    [
+     -60.5,
+     26.8
+    ],
+    [
+     -68.0,
+     22.8
+    ],
+    [
+     -68.0,
+     -22.8
+    ],
+    [
+     -60.5,
+     -26.8
+    ],
+    [
+     2.0,
+     -29.8
+    ],
+    [
+     39.5,
+     -24.5
+    ],
+    [
+     65.5,
+     -3.8
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     12.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "TubCut_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     72.0,
+     4.5
+    ],
+    [
+     43.0,
+     29.5
+    ],
+    [
+     2.0,
+     34.8
+    ],
+    [
+     -63.0,
+     31.3
+    ],
+    [
+     -70.5,
+     27.3
+    ],
+    [
+     -70.5,
+     -27.3
+    ],
+    [
+     -63.0,
+     -31.3
+    ],
+    [
+     2.0,
+     -34.8
+    ],
+    [
+     43.0,
+     -29.5
+    ],
+    [
+     72.0,
+     -4.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     27.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "TubCut_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     78.0,
+     5.2
+    ],
+    [
+     46.0,
+     32.3
+    ],
+    [
+     2.0,
+     37.8
+    ],
+    [
+     -64.0,
+     33.8
+    ],
+    [
+     -71.5,
+     29.8
+    ],
+    [
+     -71.5,
+     -29.8
+    ],
+    [
+     -64.0,
+     -33.8
+    ],
+    [
+     2.0,
+     -37.8
+    ],
+    [
+     46.0,
+     -32.3
+    ],
+    [
+     78.0,
+     -5.2
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     36.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "TubCut_sk_3"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     81.5,
+     5.8
+    ],
+    [
+     47.5,
+     33.5
+    ],
+    [
+     2.0,
+     38.5
+    ],
+    [
+     -64.0,
+     34.0
+    ],
+    [
+     -71.5,
+     30.0
+    ],
+    [
+     -71.5,
+     -30.0
+    ],
+    [
+     -64.0,
+     -34.0
+    ],
+    [
+     2.0,
+     -38.5
+    ],
+    [
+     47.5,
+     -33.5
+    ],
+    [
+     81.5,
+     -5.8
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "TubCut_sk_0"
+    },
+    {
+     "sketch": "TubCut_sk_1"
+    }
+   ],
+   "body_name": "Tub_Cut"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "TubCut_sk_1"
+    },
+    {
+     "sketch": "TubCut_sk_2"
+    }
+   ],
+   "body_name": "Tub_Cut_seg_1"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "TubCut_sk_2"
+    },
+    {
+     "sketch": "TubCut_sk_3"
+    }
+   ],
+   "body_name": "Tub_Cut_seg_2"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Tub_Cut",
+   "tools": [
+    "Tub_Cut_seg_1",
+    "Tub_Cut_seg_2"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "88",
+   "width": "7.5",
+   "height": "2.0",
+   "center": [
+    "-4",
+    "18",
+    "0.5"
+   ],
+   "body_name": "Keel_Groove_L"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "88",
+   "width": "7.5",
+   "height": "2.0",
+   "center": [
+    "-4",
+    "-18",
+    "0.5"
+   ],
+   "body_name": "Keel_Groove_R"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Tub_Cut",
+    "Keel_Groove_L",
+    "Keel_Groove_R"
+   ],
+   "operation": "cut"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     0.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullEnv_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     71.0,
+     5.5
+    ],
+    [
+     42.0,
+     27.5
+    ],
+    [
+     2.0,
+     33.0
+    ],
+    [
+     -64.0,
+     30.0
+    ],
+    [
+     -72.0,
+     26.0
+    ],
+    [
+     -72.0,
+     -26.0
+    ],
+    [
+     -64.0,
+     -30.0
+    ],
+    [
+     2.0,
+     -33.0
+    ],
+    [
+     42.0,
+     -27.5
+    ],
+    [
+     71.0,
+     -5.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     12.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullEnv_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     78.0,
+     6.5
+    ],
+    [
+     46.0,
+     33.5
+    ],
+    [
+     2.0,
+     39.0
+    ],
+    [
+     -67.0,
+     35.5
+    ],
+    [
+     -75.0,
+     31.5
+    ],
+    [
+     -75.0,
+     -31.5
+    ],
+    [
+     -67.0,
+     -35.5
+    ],
+    [
+     2.0,
+     -39.0
+    ],
+    [
+     46.0,
+     -33.5
+    ],
+    [
+     78.0,
+     -6.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     27.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "HullEnv_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     84.0,
+     7.5
+    ],
+    [
+     49.0,
+     36.5
+    ],
+    [
+     2.0,
+     42.0
+    ],
+    [
+     -68.0,
+     38.0
+    ],
+    [
+     -76.0,
+     34.0
+    ],
+    [
+     -76.0,
+     -34.0
+    ],
+    [
+     -68.0,
+     -38.0
+    ],
+    [
+     2.0,
+     -42.0
+    ],
+    [
+     49.0,
+     -36.5
+    ],
+    [
+     84.0,
+     -7.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "HullEnv_sk_0"
+    },
+    {
+     "sketch": "HullEnv_sk_1"
+    }
+   ],
+   "body_name": "Hull_Env"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "HullEnv_sk_1"
+    },
+    {
+     "sketch": "HullEnv_sk_2"
+    }
+   ],
+   "body_name": "Hull_Env_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull_Env",
+   "tools": [
+    "Hull_Env_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     0.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternPod_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -26.0,
+     21.0
+    ],
+    [
+     -76.0,
+     21.0
+    ],
+    [
+     -76.0,
+     -21.0
+    ],
+    [
+     -26.0,
+     -21.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     17.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternPod_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -26.0,
+     22.0
+    ],
+    [
+     -76.0,
+     22.0
+    ],
+    [
+     -76.0,
+     -22.0
+    ],
+    [
+     -26.0,
+     -22.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     27.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternPod_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -28.0,
+     21.0
+    ],
+    [
+     -76.0,
+     21.0
+    ],
+    [
+     -76.0,
+     -21.0
+    ],
+    [
+     -28.0,
+     -21.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SternPod_sk_0"
+    },
+    {
+     "sketch": "SternPod_sk_1"
+    }
+   ],
+   "body_name": "Stern_Pod"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SternPod_sk_1"
+    },
+    {
+     "sketch": "SternPod_sk_2"
+    }
+   ],
+   "body_name": "Stern_Pod_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Stern_Pod",
+   "tools": [
+    "Stern_Pod_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     26.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternFin_L_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -30.0,
+     16.5
+    ],
+    [
+     -70.0,
+     16.5
+    ],
+    [
+     -74.0,
+     21.5
+    ],
+    [
+     -34.0,
+     21.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     31.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternFin_L_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -36.0,
+     17.5
+    ],
+    [
+     -66.0,
+     17.5
+    ],
+    [
+     -69.0,
+     20.5
+    ],
+    [
+     -39.0,
+     20.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SternFin_L_sk_0"
+    },
+    {
+     "sketch": "SternFin_L_sk_1"
+    }
+   ],
+   "body_name": "Stern_Fin_L"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     26.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternFin_R_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -34.0,
+     -21.5
+    ],
+    [
+     -74.0,
+     -21.5
+    ],
+    [
+     -70.0,
+     -16.5
+    ],
+    [
+     -30.0,
+     -16.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     31.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "SternFin_R_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -39.0,
+     -20.5
+    ],
+    [
+     -69.0,
+     -20.5
+    ],
+    [
+     -66.0,
+     -17.5
+    ],
+    [
+     -36.0,
+     -17.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "SternFin_R_sk_0"
+    },
+    {
+     "sketch": "SternFin_R_sk_1"
+    }
+   ],
+   "body_name": "Stern_Fin_R"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Stern_Pod",
+   "tools": [
+    "Hull_Env"
+   ],
+   "operation": "intersect"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     3.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinMain_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     42.0,
+     8.0
+    ],
+    [
+     30.0,
+     21.0
+    ],
+    [
+     -4.0,
+     22.0
+    ],
+    [
+     -4.0,
+     -22.0
+    ],
+    [
+     30.0,
+     -21.0
+    ],
+    [
+     42.0,
+     -8.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     25.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinMain_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     37.0,
+     7.5
+    ],
+    [
+     26.0,
+     20.0
+    ],
+    [
+     -4.0,
+     21.0
+    ],
+    [
+     -4.0,
+     -21.0
+    ],
+    [
+     26.0,
+     -20.0
+    ],
+    [
+     37.0,
+     -7.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     36.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinMain_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     31.0,
+     7.0
+    ],
+    [
+     22.0,
+     18.0
+    ],
+    [
+     -4.0,
+     19.0
+    ],
+    [
+     -4.0,
+     -19.0
+    ],
+    [
+     22.0,
+     -18.0
+    ],
+    [
+     31.0,
+     -7.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "CabinMain_sk_0"
+    },
+    {
+     "sketch": "CabinMain_sk_1"
+    }
+   ],
+   "body_name": "Cabin_Main"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "CabinMain_sk_1"
+    },
+    {
+     "sketch": "CabinMain_sk_2"
+    }
+   ],
+   "body_name": "Cabin_Main_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Cabin_Main",
+   "tools": [
+    "Cabin_Main_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     35.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinRoof_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     31.2,
+     7.0
+    ],
+    [
+     22.2,
+     18.0
+    ],
+    [
+     -4.0,
+     19.0
+    ],
+    [
+     -4.0,
+     -19.0
+    ],
+    [
+     22.2,
+     -18.0
+    ],
+    [
+     31.2,
+     -7.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     38.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinRoof_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     34.0,
+     7.8
+    ],
+    [
+     24.5,
+     20.5
+    ],
+    [
+     -5.5,
+     21.5
+    ],
+    [
+     -5.5,
+     -21.5
+    ],
+    [
+     24.5,
+     -20.5
+    ],
+    [
+     34.0,
+     -7.8
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     40.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "CabinRoof_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     32.5,
+     7.2
+    ],
+    [
+     23.5,
+     19.5
+    ],
+    [
+     -5.0,
+     20.5
+    ],
+    [
+     -5.0,
+     -20.5
+    ],
+    [
+     23.5,
+     -19.5
+    ],
+    [
+     32.5,
+     -7.2
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "CabinRoof_sk_0"
+    },
+    {
+     "sketch": "CabinRoof_sk_1"
+    }
+   ],
+   "body_name": "Cabin_Roof"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "CabinRoof_sk_1"
+    },
+    {
+     "sketch": "CabinRoof_sk_2"
+    }
+   ],
+   "body_name": "Cabin_Roof_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Cabin_Roof",
+   "tools": [
+    "Cabin_Roof_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     3.5
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "EngineSpine_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -2.0,
+     14.0
+    ],
+    [
+     -31.0,
+     13.0
+    ],
+    [
+     -31.0,
+     -13.0
+    ],
+    [
+     -2.0,
+     -14.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     28.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "EngineSpine_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -2.0,
+     13.0
+    ],
+    [
+     -31.0,
+     11.5
+    ],
+    [
+     -31.0,
+     -11.5
+    ],
+    [
+     -2.0,
+     -13.0
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     36.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "EngineSpine_sk_2"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -3.0,
+     10.5
+    ],
+    [
+     -28.0,
+     9.5
+    ],
+    [
+     -28.0,
+     -9.5
+    ],
+    [
+     -3.0,
+     -10.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "EngineSpine_sk_0"
+    },
+    {
+     "sketch": "EngineSpine_sk_1"
+    }
+   ],
+   "body_name": "Engine_Spine"
+  }
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "EngineSpine_sk_1"
+    },
+    {
+     "sketch": "EngineSpine_sk_2"
+    }
+   ],
+   "body_name": "Engine_Spine_seg_1"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Engine_Spine",
+   "tools": [
+    "Engine_Spine_seg_1"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     32.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "FunnelShroud_sk_0"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -6.0,
+     10.5
+    ],
+    [
+     -28.0,
+     10.0
+    ],
+    [
+     -30.0,
+     5.0
+    ],
+    [
+     -30.0,
+     -5.0
+    ],
+    [
+     -28.0,
+     -10.0
+    ],
+    [
+     -6.0,
+     -10.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     51.0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     1,
+     0
+    ]
+   },
+   "name": "FunnelShroud_sk_1"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     -9.0,
+     9.5
+    ],
+    [
+     -26.5,
+     9.0
+    ],
+    [
+     -28.5,
+     4.5
+    ],
+    [
+     -28.5,
+     -4.5
+    ],
+    [
+     -26.5,
+     -9.0
+    ],
+    [
+     -9.0,
+     -9.5
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.loft",
+  "params": {
+   "sections": [
+    {
+     "sketch": "FunnelShroud_sk_0"
+    },
+    {
+     "sketch": "FunnelShroud_sk_1"
+    }
+   ],
+   "body_name": "Funnel_Shroud"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "22.0",
+   "height": "50.5",
+   "base": [
+    "chimney_x",
+    "0",
+    "floor_t"
+   ],
+   "axis": "Z",
+   "body_name": "Chimney_Outer"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "22.0",
+   "top_diameter": "26.5",
+   "height": "2.5",
+   "base": [
+    "chimney_x",
+    "0",
+    "51.5"
+   ],
+   "axis": "Z",
+   "body_name": "Chimney_Flare"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "26.5",
+   "height": "6.0",
+   "base": [
+    "chimney_x",
+    "0",
+    "54.0"
+   ],
+   "axis": "Z",
+   "body_name": "Chimney_Top"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "12.6",
+   "height": "11.0",
+   "base": [
+    "-18",
+    "26.5",
+    "floor_t"
+   ],
+   "axis": "Z",
+   "body_name": "Lifebuoy_Pad_L"
+  }
+ },
+ {
+  "command": "solid.torus",
+  "params": {
+   "major": "4.2",
+   "minor": "1.9",
+   "center": [
+    "-18",
+    "26.5",
+    "14.8"
+   ],
+   "body_name": "Lifebuoy_L"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "12.6",
+   "height": "11.0",
+   "base": [
+    "-18",
+    "-26.5",
+    "floor_t"
+   ],
+   "axis": "Z",
+   "body_name": "Lifebuoy_Pad_R"
+  }
+ },
+ {
+  "command": "solid.torus",
+  "params": {
+   "major": "4.2",
+   "minor": "1.9",
+   "center": [
+    "-18",
+    "-26.5",
+    "14.8"
+   ],
+   "body_name": "Lifebuoy_R"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "10.0",
+   "height": "18.5",
+   "base": [
+    "56",
+    "0",
+    "floor_t"
+   ],
+   "axis": "Z",
+   "body_name": "Bow_Bollard_Post"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "10.0",
+   "top_diameter": "13.0",
+   "height": "2.0",
+   "base": [
+    "56",
+    "0",
+    "21.5"
+   ],
+   "axis": "Z",
+   "body_name": "Bow_Bollard_Flare"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "13.0",
+   "height": "2.5",
+   "base": [
+    "56",
+    "0",
+    "23.5"
+   ],
+   "axis": "Z",
+   "body_name": "Bow_Bollard_Cap"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Stern_Pod",
+    "Stern_Fin_L",
+    "Stern_Fin_R",
+    "Cabin_Main",
+    "Cabin_Roof",
+    "Engine_Spine",
+    "Funnel_Shroud",
+    "Chimney_Outer",
+    "Chimney_Flare",
+    "Chimney_Top",
+    "Lifebuoy_Pad_L",
+    "Lifebuoy_Pad_R",
+    "Lifebuoy_L",
+    "Lifebuoy_R",
+    "Bow_Bollard_Post",
+    "Bow_Bollard_Flare",
+    "Bow_Bollard_Cap"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "26.0",
+   "height": "20.5",
+   "base": [
+    "spinner_x",
+    "0",
+    "floor_t"
+   ],
+   "axis": "Z",
+   "body_name": "Cabin_Int_Cyl"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "26.0",
+   "top_diameter": "8.4",
+   "height": "9.0",
+   "base": [
+    "spinner_x",
+    "0",
+    "24.0"
+   ],
+   "axis": "Z",
+   "body_name": "Cabin_Int_Cone"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "8.4",
+   "height": "7.5",
+   "base": [
+    "spinner_x",
+    "0",
+    "32.5"
+   ],
+   "axis": "Z",
+   "body_name": "Cabin_Roof_Hole"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "8.4",
+   "top_diameter": "13.4",
+   "height": "2.5",
+   "base": [
+    "spinner_x",
+    "0",
+    "38.5"
+   ],
+   "axis": "Z",
+   "body_name": "Cabin_Roof_Flare"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "14.0",
+   "width": "50.0",
+   "height": "17.5",
+   "center": [
+    "spinner_x",
+    "0",
+    "floor_t + 8.75"
+   ],
+   "body_name": "Cabin_Door_Box"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "14.0",
+   "height": "50.0",
+   "base": [
+    "spinner_x",
+    "-25.0",
+    "21.0"
+   ],
+   "axis": "Y",
+   "body_name": "Cabin_Door_Arch"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "12.0",
+   "height": "34.0",
+   "base": [
+    "spinner_x",
+    "0",
+    "26.0"
+   ],
+   "axis": "X",
+   "body_name": "Window_Front_C"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "8.5",
+   "height": "34.0",
+   "base": [
+    "spinner_x",
+    "7.0",
+    "26.0"
+   ],
+   "axis": "X",
+   "body_name": "Window_Front_L"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "8.5",
+   "height": "34.0",
+   "base": [
+    "spinner_x",
+    "-7.0",
+    "26.0"
+   ],
+   "axis": "X",
+   "body_name": "Window_Front_R"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Cabin_Int_Cyl",
+    "Cabin_Int_Cone",
+    "Cabin_Roof_Hole",
+    "Cabin_Roof_Flare",
+    "Cabin_Door_Box",
+    "Cabin_Door_Arch",
+    "Window_Front_C",
+    "Window_Front_L",
+    "Window_Front_R"
+   ],
+   "operation": "cut"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "17.6",
+   "height": "18.0",
+   "base": [
+    "spinner_x",
+    "0",
+    "0"
+   ],
+   "axis": "Z",
+   "body_name": "PS_Standpipe"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "PS_Standpipe"
+   ],
+   "operation": "join"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "15.0",
+   "top_diameter": "7.0",
+   "height": "4.0",
+   "base": [
+    "spinner_x",
+    "0",
+    "-0.5"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_PS_Bot"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "7.0",
+   "height": "11.2",
+   "base": [
+    "spinner_x",
+    "0",
+    "3.4"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_PS_Neck"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "7.0",
+   "top_diameter": "14.0",
+   "height": "3.5",
+   "base": [
+    "spinner_x",
+    "0",
+    "14.5"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_PS_Top_Flare"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "9.0",
+   "height": "38.0",
+   "base": [
+    "chimney_x",
+    "0",
+    "jet_z"
+   ],
+   "axis": "Z",
+   "body_name": "Chimney_Bore"
+  }
+ },
+ {
+  "command": "solid.sphere",
+  "params": {
+   "diameter": "9.0",
+   "center": [
+    "chimney_x",
+    "0",
+    "jet_z"
+   ],
+   "body_name": "Jet_Elbow"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "9.0",
+   "height": "18.0",
+   "base": [
+    "-36.0",
+    "0",
+    "jet_z"
+   ],
+   "axis": "X",
+   "body_name": "Jet_Nozzle"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "9.0",
+   "top_diameter": "19.0",
+   "height": "8.5",
+   "base": [
+    "chimney_x",
+    "0",
+    "52.0"
+   ],
+   "axis": "Z",
+   "body_name": "Chimney_Funnel_Cup"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "32.0",
+   "height": "16.0",
+   "base": [
+    "wheel_x",
+    "0",
+    "wheel_floor_z"
+   ],
+   "axis": "Z",
+   "body_name": "Wheel_Bay_Cut"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "26.0",
+   "width": "17.0",
+   "height": "16.0",
+   "center": [
+    "-70.0",
+    "0",
+    "wheel_floor_z + 8.0"
+   ],
+   "body_name": "Stern_Spillway_Box"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "15.0",
+   "top_diameter": "7.0",
+   "height": "4.0",
+   "base": [
+    "wheel_x",
+    "0",
+    "-0.5"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_WW_Bot"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "diameter": "7.0",
+   "height": "10.2",
+   "base": [
+    "wheel_x",
+    "0",
+    "3.4"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_WW_Neck"
+  }
+ },
+ {
+  "command": "solid.cone",
+  "params": {
+   "diameter": "7.0",
+   "top_diameter": "14.0",
+   "height": "3.5",
+   "base": [
+    "wheel_x",
+    "0",
+    "13.5"
+   ],
+   "axis": "Z",
+   "body_name": "Hull_WW_Top_Flare"
+  }
+ },
+ {
+  "command": "solid.combine",
+  "params": {
+   "target": "Hull",
+   "tools": [
+    "Hull_PS_Bot",
+    "Hull_PS_Neck",
+    "Hull_PS_Top_Flare",
+    "Chimney_Bore",
+    "Jet_Elbow",
+    "Jet_Nozzle",
+    "Chimney_Funnel_Cup",
+    "Wheel_Bay_Cut",
+    "Stern_Spillway_Box",
+    "Hull_WW_Bot",
+    "Hull_WW_Neck",
+    "Hull_WW_Top_Flare"
+   ],
+   "operation": "cut"
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": {
+    "origin": [
+     0,
+     0,
+     0
+    ],
+    "x_dir": [
+     1,
+     0,
+     0
+    ],
+    "y_dir": [
+     0,
+     -1,
+     0
+    ]
+   },
+   "name": "Bottom_Code_Sk"
+  }
+ },
+ {
+  "command": "sketch.text",
+  "params": {
+   "text": "HRX-02",
+   "at": [
+    -15.0,
+    3.2
+   ],
+   "height": 7.5,
+   "font": "C:/Windows/Fonts/consolab.ttf",
+   "align": "center",
+   "vertical_align": "middle",
+   "letter_spacing": 0.6
+  }
+ },
+ {
+  "command": "sketch.text",
+  "params": {
+   "text": "AQUA-VANGUARD",
+   "at": [
+    -15.0,
+    -4.4
+   ],
+   "height": 3.6,
+   "font": "C:/Windows/Fonts/consolab.ttf",
+   "align": "center",
+   "vertical_align": "middle",
+   "letter_spacing": 0.25
+  }
+ },
+ {
+  "command": "sketch.finish"
+ },
+ {
+  "command": "solid.extrude",
+  "params": {
+   "sketch": "Bottom_Code_Sk",
+   "distance": "-0.6",
+   "operation": "cut",
+   "targets": [
+    "Hull"
+   ]
+  }
+ },
+ {
+  "command": "inspect.measure"
+ },
+ {
+  "command": "file.save",
+  "params": {
+   "path": "C:/Users/makim/.gemini/antigravity/scratch/bath-toy-boat-mk2/cad/handoff/hull.sc"
+  }
+ }
+]

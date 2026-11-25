@@ -1,0 +1,169 @@
+{
+  "mass_g": 95.34,
+  "center_of_mass_mm": [
+    -7.724,
+    0.0,
+    17.478
+  ],
+  "max_GZ_mm": 13.16,
+  "angle_of_max_GZ_deg": 35,
+  "max_righting_moment_Nmm": 12.308,
+  "gunwale_immersion_deg": 25,
+  "positive_stability_up_to_deg": 65,
+  "curve": [
+    {
+      "heel_deg": 0,
+      "waterline_z_mm": 11.25,
+      "By_mm": 0.0,
+      "Bz_mm": 6.24,
+      "Gy_mm": 0.0,
+      "Gz_mm": 17.48,
+      "GZ_mm": 0.0,
+      "righting_moment_Nmm": 0.001,
+      "gunwale_freeboard_mm": 15.75
+    },
+    {
+      "heel_deg": 5,
+      "waterline_z_mm": 10.56,
+      "By_mm": 4.22,
+      "Bz_mm": 5.34,
+      "Gy_mm": 1.52,
+      "Gz_mm": 17.41,
+      "GZ_mm": 2.7,
+      "righting_moment_Nmm": 2.524,
+      "gunwale_freeboard_mm": 12.67
+    },
+    {
+      "heel_deg": 10,
+      "waterline_z_mm": 10.26,
+      "By_mm": 8.15,
+      "Bz_mm": 4.82,
+      "Gy_mm": 3.04,
+      "Gz_mm": 17.21,
+      "GZ_mm": 5.12,
+      "righting_moment_Nmm": 4.789,
+      "gunwale_freeboard_mm": 9.04
+    },
+    {
+      "heel_deg": 15,
+      "waterline_z_mm": 9.82,
+      "By_mm": 12.24,
+      "Bz_mm": 3.92,
+      "Gy_mm": 4.52,
+      "Gz_mm": 16.88,
+      "GZ_mm": 7.72,
+      "righting_moment_Nmm": 7.218,
+      "gunwale_freeboard_mm": 5.39
+    },
+    {
+      "heel_deg": 20,
+      "waterline_z_mm": 9.16,
+      "By_mm": 16.36,
+      "Bz_mm": 2.71,
+      "Gy_mm": 5.98,
+      "Gz_mm": 16.42,
+      "GZ_mm": 10.39,
+      "righting_moment_Nmm": 9.713,
+      "gunwale_freeboard_mm": 1.85
+    },
+    {
+      "heel_deg": 25,
+      "waterline_z_mm": 8.06,
+      "By_mm": 19.51,
+      "Bz_mm": 1.13,
+      "Gy_mm": 7.39,
+      "Gz_mm": 15.84,
+      "GZ_mm": 12.12,
+      "righting_moment_Nmm": 11.335,
+      "gunwale_freeboard_mm": -1.34
+    },
+    {
+      "heel_deg": 30,
+      "waterline_z_mm": 6.72,
+      "By_mm": 21.83,
+      "Bz_mm": -0.72,
+      "Gy_mm": 8.74,
+      "Gz_mm": 15.14,
+      "GZ_mm": 13.09,
+      "righting_moment_Nmm": 12.242,
+      "gunwale_freeboard_mm": -4.33
+    },
+    {
+      "heel_deg": 35,
+      "waterline_z_mm": 5.34,
+      "By_mm": 23.18,
+      "Bz_mm": -2.69,
+      "Gy_mm": 10.02,
+      "Gz_mm": 14.32,
+      "GZ_mm": 13.16,
+      "righting_moment_Nmm": 12.308,
+      "gunwale_freeboard_mm": -7.31
+    },
+    {
+      "heel_deg": 40,
+      "waterline_z_mm": 3.91,
+      "By_mm": 23.89,
+      "Bz_mm": -4.69,
+      "Gy_mm": 11.23,
+      "Gz_mm": 13.39,
+      "GZ_mm": 12.66,
+      "righting_moment_Nmm": 11.838,
+      "gunwale_freeboard_mm": -10.22
+    },
+    {
+      "heel_deg": 45,
+      "waterline_z_mm": 2.12,
+      "By_mm": 24.05,
+      "Bz_mm": -6.68,
+      "Gy_mm": 12.36,
+      "Gz_mm": 12.36,
+      "GZ_mm": 11.69,
+      "righting_moment_Nmm": 10.938,
+      "gunwale_freeboard_mm": -12.73
+    },
+    {
+      "heel_deg": 50,
+      "waterline_z_mm": 0.91,
+      "By_mm": 24.06,
+      "Bz_mm": -8.93,
+      "Gy_mm": 13.39,
+      "Gz_mm": 11.23,
+      "GZ_mm": 10.67,
+      "righting_moment_Nmm": 9.979,
+      "gunwale_freeboard_mm": -15.73
+    },
+    {
+      "heel_deg": 55,
+      "waterline_z_mm": -0.55,
+      "By_mm": 23.71,
+      "Bz_mm": -11.03,
+      "Gy_mm": 14.32,
+      "Gz_mm": 10.02,
+      "GZ_mm": 9.39,
+      "righting_moment_Nmm": 8.781,
+      "gunwale_freeboard_mm": -18.37
+    },
+    {
+      "heel_deg": 60,
+      "waterline_z_mm": -2.12,
+      "By_mm": 23.1,
+      "Bz_mm": -13.07,
+      "Gy_mm": 15.14,
+      "Gz_mm": 8.74,
+      "GZ_mm": 7.97,
+      "righting_moment_Nmm": 7.452,
+      "gunwale_freeboard_mm": -20.75
+    },
+    {
+      "heel_deg": 65,
+      "waterline_z_mm": -3.81,
+      "By_mm": 22.29,
+      "Bz_mm": -15.06,
+      "Gy_mm": 15.84,
+      "Gz_mm": 7.39,
+      "GZ_mm": 6.45,
+      "righting_moment_Nmm": 6.032,
+      "gunwale_freeboard_mm": -22.85
+    }
+  ]
+}
